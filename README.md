@@ -1,0 +1,2 @@
+# Where-the-Correlates-of-Life-Evaluation-Hold-and-How-Far-They-Travel-CRE-ML-2006-2025
+Where the correlates of life evaluation hold, and how far they travel: a level-separated evidence map separating within-country change, between-country differences and respondent-level position. CRE-Mundlak + elastic net/XGBoost validation, multiplicity correction, Oster bounds and influence diagnostics. Gallup World Poll, 168 countries, 2006–2025.
