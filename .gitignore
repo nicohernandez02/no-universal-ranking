@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Quarto
+.quarto/
+*_cache/
+*_files/
+*.html
+
+# Data — licensed, never committed
+data/
+*.parquet
+*.csv
+*.sav
+*.dta
+
+# Generated output
+output/
