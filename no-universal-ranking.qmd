@@ -28,7 +28,7 @@ Anyone who completes the three steps below obtains, bit for bit, every number, t
 
 1. **Restore the frozen package environment**: `renv::restore()` (reads `renv.lock`, shipped in this repository, which pins the exact version of R and of every package used).
 2. **Place the licensed data**: Gallup World Poll microdata are licensed and not distributed here. Obtain an extract under your own licence and place it at `data/gallup_extract.parquet` (or set the `GALLUP_PARQUET` environment variable). The preflight chunk verifies its SHA-256 against the checksum pinned in `CFG`, so it is impossible to unknowingly run against a different extract. The World Bank panel goes at `data/wb_panel.rds`.
-3. **Render**: `quarto render CAPSTONE_PIPELINE_V29_REPRODUCIBLE.qmd` from the repository root.
+3. **Render**: `quarto render no-universal-ranking.qmd` from the repository root.
 
 The guarantee rests on four mechanisms, all enforced in code rather than by convention: relative paths only (nothing machine-specific), package versions frozen in `renv.lock`, a pinned RNG kind plus `set.seed(CFG$seed)` before every stochastic step (QUICK subsampling, holdout splits, MICE, boosting — trained single-threaded with `nthread = 1` so gradient summation order cannot perturb the last decimals — and permutation importance), and SHA-256 verification of both inputs before anything expensive runs. `CFG$QUICK` is frozen at `FALSE`: this file, as committed, is the exact configuration that produced the dissertation.
 
@@ -5066,6 +5066,8 @@ message("Prose  : ", file.path(CFG$outdir,"GENERATED_THESIS_PROSE.md"))
 ```
 
 
+```{r candidate_figures}
+#| cache: false
 # ============================================================================
 # CANDIDATE MAIN-TEXT FIGURES
 # Uses objects already in the open V28 session.
@@ -5213,7 +5215,7 @@ T18d <- tryCatch({
 # present, this block fails loudly and explicitly rather than fabricating
 # numbers -- exactly the failure mode the pipeline's own design philosophy
 # calls for ("no hard-coded fallback values... if an input is missing, it
-# stops"). Verified against the submitted thesis (MY498_73280): all five rows
+# stops"). Verified against the submitted thesis (MY498_XXXXX): all five rows
 # reproduce the printed values to four decimal places.
 T18f <- tryCatch({
   .downstream <- path.expand(CFG$downstream_dir)
@@ -5809,3 +5811,4 @@ cat(
   "Also created:\n",
   file.path(CFG$outdir, "tab", "T40_income_three_levels.csv"), "\n"
 )
+```
