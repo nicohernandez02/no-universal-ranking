@@ -19,5 +19,27 @@ data/
 *.sav
 *.dta
 
+# Exception: small, aggregated, license-free stability-diagnostic checkpoints
+# that CFG$downstream_dir in no-universal-ranking.qmd expects to find
+# committed (leave-one-country-out, sample-weighting sensitivity, MICE
+# sensitivity summaries feeding Table 7 / Figure 15). No microdata here.
+!data/downstream_checkpoints/
+!data/downstream_checkpoints/*.csv
+
 # Generated output
 output/
+outputs_v26_one_shot_final/
+outputs*/
+
+# renv (renv.lock IS meant to be committed; its local library is not)
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# Quarto/knitr stray artefacts
+.ipynb_checkpoints/
+__pycache__/
