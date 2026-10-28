@@ -43,3 +43,10 @@ renv/staging/
 # Quarto/knitr stray artefacts
 .ipynb_checkpoints/
 __pycache__/
+
+# revision analyses: cache holds respondent-level Gallup data
+revision/_targets/
+revision_v2.zip
+revision/run_log.txt
+revision/run_log*.txt
+revision/zz_test
