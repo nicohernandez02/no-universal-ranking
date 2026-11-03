@@ -32,6 +32,8 @@ relative to compatriots.
 | R7 | Predictive baselines (GDP only, country means, within-country deviations, undecomposed predictors) |
 | R8 | Pooled, random-effects and two-way fixed-effects comparisons |
 | R9 | Lead–lag AIC comparison |
+| X1–X5 (`revision/extra/`) | Country-clustered decomposition, within–between contrasts in common units, GDP per log point, bivariate checks for the negative items, 90% coverage and complete-case samples |
+| X6–X8 (`revision/extra/`) | Country bootstrap of the mixed model (999 resamples), variance inflation factors and bivariate slopes for all predictors, exclusion of 2020–2021 |
 
 ## Running the code
 
@@ -44,6 +46,7 @@ through `WB_PANEL`. Then:
 ```bash
 quarto render no-universal-ranking.qmd     # main pipeline (several hours with QUICK = FALSE)
 cd revision && Rscript -e 'targets::tar_make()'
+Rscript extra/x1_x4_clustered_contrasts_logpoint_bivariate.R   # and the other scripts in extra/
 ```
 
 `CFG$QUICK = TRUE` in the `cfg` chunk runs a fast check on a subsample. Seeds
