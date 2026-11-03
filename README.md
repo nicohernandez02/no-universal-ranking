@@ -34,6 +34,7 @@ relative to compatriots.
 | R9 | Lead–lag AIC comparison |
 | X1–X5 (`revision/extra/`) | Country-clustered decomposition, within–between contrasts in common units, GDP per log point, bivariate checks for the negative items, 90% coverage and complete-case samples |
 | X6–X8 (`revision/extra/`) | Country bootstrap of the mixed model (999 resamples), variance inflation factors and bivariate slopes for all predictors, exclusion of 2020–2021 |
+| X9–X10 (`revision/extra/`) | Screening threshold of 0.04 with model-based and country-clustered errors; within–between decomposition of the World Happiness Report predictors available in the World Poll |
 
 ## Running the code
 
