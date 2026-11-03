@@ -5215,7 +5215,7 @@ T18d <- tryCatch({
 # present, this block fails loudly and explicitly rather than fabricating
 # numbers -- exactly the failure mode the pipeline's own design philosophy
 # calls for ("no hard-coded fallback values... if an input is missing, it
-# stops"). Verified against the submitted thesis (MY498_XXXXX): all five rows
+# stops"). Verified against the submitted version: all five rows
 # reproduce the printed values to four decimal places.
 T18f <- tryCatch({
   .downstream <- path.expand(CFG$downstream_dir)
